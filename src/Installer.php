@@ -51,6 +51,9 @@ class Installer {
         $this->pharName = $pharName;
     }
 
+    /**
+     * Download the phar.
+     */
     public function download() {
         $filename = sprintf(
             'https://github.com/%s/%s/releases/download/%s/%s',

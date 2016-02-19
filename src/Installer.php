@@ -32,24 +32,32 @@ class Installer {
      */
     private $repository;
 
+    /**
+     * @var string
+     */
+    private $pharName;
+
     public function __construct(
         GithubClient $github,
         GuzzleClient $guzzle,
         $organisation,
-        $repository
+        $repository,
+        $pharName
     ) {
         $this->github = $github;
         $this->guzzle = $guzzle;
         $this->organisation = $organisation;
         $this->repository = $repository;
+        $this->pharName = $pharName;
     }
 
     public function download() {
         $filename = sprintf(
-            'https://github.com/%s/%s/releases/download/%s/drupalvm-generate.phar',
+            'https://github.com/%s/%s/releases/download/%s/%s',
             $this->organisation,
             $this->repository,
-            $this->getLatestRelease()
+            $this->getLatestRelease(),
+            $this->pharName
         );
 
         return $this->guzzle->get($filename);

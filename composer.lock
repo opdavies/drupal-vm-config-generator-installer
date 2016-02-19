@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f5fe647d08d22bca95452422b594d9be",
-    "content-hash": "320795d7dd2c2a4ecdd7db6034e3c820",
+    "hash": "14c9a407f027b592cb7ce8ba5b346652",
+    "content-hash": "559c443e624dd55c86e389f2d91120ee",
     "packages": [
         {
             "name": "guzzle/guzzle",
@@ -98,6 +98,63 @@
                 "web service"
             ],
             "time": "2014-01-28 22:29:15"
+        },
+        {
+            "name": "igorw/config-service-provider",
+            "version": "v1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/igorw/ConfigServiceProvider.git",
+                "reference": "092ed2c762bbae331e3f51d4a17f67310bf99a81"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/igorw/ConfigServiceProvider/zipball/092ed2c762bbae331e3f51d4a17f67310bf99a81",
+                "reference": "092ed2c762bbae331e3f51d4a17f67310bf99a81",
+                "shasum": ""
+            },
+            "require": {
+                "silex/silex": "~1.0"
+            },
+            "require-dev": {
+                "jamesmoss/toml": "~0.1",
+                "symfony/yaml": "~2.1"
+            },
+            "suggest": {
+                "jamesmoss/toml": "~0.1",
+                "symfony/yaml": "~2.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Igorw\\Silex": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch",
+                    "homepage": "http://wiedler.ch/igor/"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/igorw/ConfigServiceProvider/contributors"
+                }
+            ],
+            "description": "A config ServiceProvider for Silex with support for php, json and yaml.",
+            "keywords": [
+                "silex"
+            ],
+            "time": "2014-07-06 10:59:11"
         },
         {
             "name": "knplabs/github-api",
@@ -645,6 +702,55 @@
                 "url"
             ],
             "time": "2016-01-27 05:14:46"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v2.8.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "34c8a4b51e751e7ea869b8262f883d008a2b81b8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/34c8a4b51e751e7ea869b8262f883d008a2b81b8",
+                "reference": "34c8a4b51e751e7ea869b8262f883d008a2b81b8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-01-13 10:28:07"
         }
     ],
     "packages-dev": [],

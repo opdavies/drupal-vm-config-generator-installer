@@ -16,17 +16,17 @@ $app->register(new ServiceControllerServiceProvider());
 
 $app->register(new ConfigServiceProvider(__DIR__ . '/config/settings.yml'));
 
-$app['github.client'] = $app->share(function() use ($app) {
+$app['github.client'] = $app->share(function () use ($app) {
     return new GithubClient(
         new CachedGithubClient(['cache_dir' => $app['github.cache_dir']])
     );
 });
 
-$app['guzzle'] = $app->share(function() {
+$app['guzzle'] = $app->share(function () {
     return new GuzzleClient();
 });
 
-$app['drupalvm.installer'] = $app->share(function() use ($app) {
+$app['drupalvm.installer'] = $app->share(function () use ($app) {
     return new Installer(
         $app['github.client'],
         $app['guzzle'],

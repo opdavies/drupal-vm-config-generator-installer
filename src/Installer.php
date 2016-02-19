@@ -10,8 +10,8 @@ use Guzzle\Http\Client as GuzzleClient;
  *
  * @package DrupalVmConfigGenerator
  */
-class Installer {
-
+class Installer
+{
     /**
      * @var GithubClient
      */
@@ -54,7 +54,8 @@ class Installer {
     /**
      * Download the phar.
      */
-    public function download() {
+    public function download()
+    {
         $filename = sprintf(
             'https://github.com/%s/%s/releases/download/%s/%s',
             $this->organisation,

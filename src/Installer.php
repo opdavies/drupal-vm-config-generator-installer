@@ -3,7 +3,7 @@
 namespace DrupalVmConfigGenerator;
 
 use Github\Client as GithubClient;
-use Guzzle\Http\Client as GuzzleClient;
+use GuzzleHttp\Client as GuzzleClient;
 
 /**
  * Class Installer

@@ -3,7 +3,7 @@
 use DrupalVmConfigGenerator\Installer;
 use Github\Client as GithubClient;
 use Github\HttpClient\CachedHttpClient as CachedGithubClient;
-use Guzzle\Http\Client as GuzzleClient;
+use GuzzleHttp\Client as GuzzleClient;
 use Igorw\Silex\ConfigServiceProvider;
 use Silex\Application;
 use Silex\Provider\ServiceControllerServiceProvider;

@@ -1,9 +1,9 @@
 <?php
 
-require __DIR__ . '/../bootstrap.php';
+use DrupalVmConfigGenerator\Installer\Application;
 
-$app->get('/', function () use ($app) {
-    return $app['drupalvm.installer']->download();
-});
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$app = new Application();
 
 $app->run();

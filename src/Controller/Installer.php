@@ -1,6 +1,6 @@
 <?php
 
-namespace DrupalVmConfigGenerator;
+namespace DrupalVmConfigGenerator\Installer\Controller;
 
 use Github\Client as GithubClient;
 use GuzzleHttp\Client as GuzzleClient;
@@ -64,7 +64,9 @@ class Installer
             $this->pharName
         );
 
-        return $this->guzzle->get($filename);
+        $response = $this->guzzle->get($filename);
+
+        return $response;
     }
 
     /**

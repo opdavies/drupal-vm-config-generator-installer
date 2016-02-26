@@ -63,9 +63,7 @@ class Application extends SilexApplication
     private function createRoutes(Application $app)
     {
         $app->get('/', function () use ($app) {
-            $response = $app['drupalvm.installer']->download();
-
-            return $response;
+            return $app['drupalvm.installer']->redirect();
         });
     }
 }

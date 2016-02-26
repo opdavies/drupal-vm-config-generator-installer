@@ -4,6 +4,7 @@ namespace DrupalVmConfigGenerator\Installer\Controller;
 
 use Github\Client as GithubClient;
 use GuzzleHttp\Client as GuzzleClient;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * Class Installer
@@ -52,24 +53,6 @@ class Installer
     }
 
     /**
-     * Download the phar.
-     */
-    public function download()
-    {
-        $filename = sprintf(
-            'https://github.com/%s/%s/releases/download/%s/%s',
-            $this->organisation,
-            $this->repository,
-            $this->getLatestRelease(),
-            $this->pharName
-        );
-
-        $response = $this->guzzle->get($filename);
-
-        return $response;
-    }
-
-    /**
      * Get the latest release tag from GitHub.
      *
      * @return string
@@ -82,5 +65,31 @@ class Installer
         );
 
         return $release['tag_name'];
+    }
+
+    /**
+     * Build the GitHub URL to the file to download.
+     *
+     * @return string
+     */
+    private function getFilename()
+    {
+        $filename = sprintf(
+            'https://github.com/%s/%s/releases/download/%s/%s',
+            $this->organisation,
+            $this->repository,
+            $this->getLatestRelease(),
+            $this->pharName
+        );
+
+        return $filename;
+    }
+
+    /**
+     * @return RedirectResponse
+     */
+    public function redirect()
+    {
+        return new RedirectResponse($this->getFilename());
     }
 }

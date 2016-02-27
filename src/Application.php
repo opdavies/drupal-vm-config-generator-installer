@@ -27,7 +27,13 @@ class Application extends SilexApplication
     {
         $app->register(new ServiceControllerServiceProvider());
 
+        # Include global settings.
         $app->register(new ConfigServiceProvider(__DIR__ . '/../config/settings.yml'));
+
+        # Include local settings.
+        if (file_exists(__DIR__ . '/../config/settings.local.yml')) {
+            $app->register(new ConfigServiceProvider(__DIR__ . '/../config/settings.local.yml'));
+        }
     }
 
     /**

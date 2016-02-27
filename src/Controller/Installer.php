@@ -3,7 +3,6 @@
 namespace DrupalVmConfigGenerator\Installer\Controller;
 
 use Github\Client as GithubClient;
-use GuzzleHttp\Client as GuzzleClient;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
@@ -17,11 +16,6 @@ class Installer
      * @var GithubClient
      */
     private $github;
-
-    /**
-     * @var GuzzleClient
-     */
-    private $guzzle;
 
     /**
      * @var string
@@ -40,13 +34,11 @@ class Installer
 
     public function __construct(
         GithubClient $github,
-        GuzzleClient $guzzle,
         $organisation,
         $repository,
         $pharName
     ) {
         $this->github = $github;
-        $this->guzzle = $guzzle;
         $this->organisation = $organisation;
         $this->repository = $repository;
         $this->pharName = $pharName;

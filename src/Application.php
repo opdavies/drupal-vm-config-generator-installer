@@ -5,7 +5,6 @@ namespace DrupalVmConfigGenerator\Installer;
 use DrupalVmConfigGenerator\Installer\Controller\Installer;
 use Github\Client as GithubClient;
 use Github\HttpClient\CachedHttpClient as CachedGithubClient;
-use GuzzleHttp\Client as GuzzleClient;
 use Igorw\Silex\ConfigServiceProvider;
 use Silex\Application as SilexApplication;
 use Silex\Provider\ServiceControllerServiceProvider;
@@ -42,14 +41,9 @@ class Application extends SilexApplication
             );
         });
 
-        $app['guzzle'] = $app->share(function () {
-            return new GuzzleClient();
-        });
-
         $app['drupalvm.installer'] = $app->share(function () use ($app) {
             return new Installer(
                 $app['github.client'],
-                $app['guzzle'],
                 $app['drupalvm.organisation'],
                 $app['drupalvm.repo'],
                 $app['drupalvm.phar_name']

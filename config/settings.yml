@@ -1,6 +1,6 @@
 ---
 drupalvm.organisation: opdavies
-drupalvm.repo: drupal-vm-config-generator
+drupalvm.repo: drupal-vm-generator
 drupalvm.phar_name: drupalvm-generate.phar
 
 github.cache_dir: '/tmp/github-api-cache'
